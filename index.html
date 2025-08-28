@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio(Soyeon Park)</title>
+</head>
+
+
+<body>
+    <article class="wrapper">
+
+        <header>
+            <div class="header-div">
+                <h1 class="header-text">SOYEON PARK (박소연)</h1>
+                <div class="header-text">Backend Engineer</div>
+            </div>
+            <div class="contact-list">
+                <ul>
+                    <li>github.com/yeon025</li>
+                    <li>soyeon6527@gmail.com</li>
+                </ul>
+            </div>
+        </header>
+
+
+        <section>
+            <div class="section-header"><b>INTRODUCE</b></div>
+            
+            <div class="section-text">
+                저는 다양한 프로젝트를 수행하며 문제 해결 능력과 기술적 역량을 꾸준히 발전시켜 온 개발자입니다.<br>
+                <b>데이터 처리, 보안, 그리고 디버깅</b>을 통한 문제 해결까지 폭넓은 경험을 바탕으로 
+                최적의 솔루션을 제공합니다.
+                다양한 분야를 배우고 도전하며, 주어진 문제를 해결하는 데 열정을 가지고 있습니다.
+            </div>
+        </section>
+
+
+        <section>
+            <div class="section-header"><b>PROJECT</b></div>
+
+            <div class="project-text">
+                <b>교보DTS 컴플라이언스 플랫폼 개발</b><br>
+                <span class="section-period">2025.03 - 2025.05 (3개월) <b> | </b></span>
+                <span class="skill">Spring Boot 3.3.10, MySQL 8.0</span>
+                <ul>
+                    <li>ISO27001, ISMS-P 인증 목록이 설계한 ERD 구조와 일치하지 않음<br>->
+                        테이블 컬럼과 일치하도록 <b>colab으로 전처리</b>한 후 MySQL에 저장</li>
+                    <li>관리 목록 페이지 구현<br>->
+                        필터링 조건이 많고 빠른 조회를 위해 <b>MyBatis + Pagenation</b> 적용</li>
+                    <li>API 호출 이력을 로그로 남겨야 함<br>->
+                        호출 이력 중앙화를 위해 <b>스프링 인터셉터</b> 적용</li>
+                    <li>프론트와 API 연동했을 때 응답값이 HTML로 반환<br>->
+                        헤더와 response body를 <b>디버깅</b>해 서버 응답은 정상임을 확인하고, 프론트 라우팅 문제임을 파악<br>->
+                        라우팅 경로를 수정하여 응답을 정상적으로 처리하도록 개선</li>
+                </ul>
+            </div>
+
+            <div class="project-text">
+                <b>지뢰찾기, 피카츄 배구 리버싱</b><br>
+                <span class="section-period">2023.09 - 2023.12 (4개월) <b> | </b></span>
+                <span class="skill">C++, IDA, x32dbg</span>
+                <ul>
+                    <li>지뢰찾기를 분석할 때 지뢰의 위치를 결정하는 함수 이름이 난독화되어 있어 식별하기 어려움<br>-> 
+                        동적 분석으로 <b>반복 실행되는 구간의 메모리 값 변화</b>를 추적하고
+                        실제로 지뢰가 생성되는 코드임을 검증</li>
+                    <li>피카츄 배구는 <b>프로세스 상태에서 디버거에 부착</b>해 분석하기 때문에 함수 흐름을 추적하기 어려움<br>->
+                        Cheat Engine으로 점수가 오르는 어셈블리 명령어를 찾고,
+                        x32dbg로 해당 구간을 분석하여 <b>바닥 판정을 수행하는 명령어</b>를 식별</li>
+                    <li>치트를 쓰기 위해 매번 PID를 구하고 입력하는 것이 번거로움<br>->
+                        파일 이름을 입력하면 <b>PID를 자동으로 구하는 코드</b> 추가</li>
+                </ul>
+            </div>
+
+            <div class="project-text">
+                <b>네트워크 위협 등 이상징후를 탐지하는 웹사이트 개발</b><br>
+                <span class="section-period">2023.08 - 2023.10 (3개월) <b> | </b></span>
+                <span class="skill">Python, Django REST Framework, scikit-learn, pandas</span>
+                <ul>
+                    <li>데이터 입력 → 변환 → 전처리 → ML 모델 추론 → 결과 직렬화까지 파이프라인 개발 경험</li>
+                    <li>시그니처 기반 탐지로 인해 새로운 공격 유형에 대한 신뢰도가 낮은 상황 발생<br>->
+                        모든 공격 유형의 분류 수치가 40% 미만이라면 예외 처리</li>
+                    <li>OpenAI 응답 시간이 오래 걸림<br>->
+                        공격 유형을 탐지한 후에 <b>OpenAI는 선택적으로 요청</b>할 수 있도록 기능 분리</li>
+                    <li>공격 유형이 normal(payload가 공격이 아님)일 때 오류 발생<br>->
+                        공격 문자열 탐지 함수가 호출되면서 오류가 발생한다는 것을 <b>디버깅</b>으로 확인<br>->
+                        <b>공격 유형이 normal인지 확인하는 로직</b>을 추가해서 normal은 공격 문자열 탐지 함수를 호출하지 않게 함</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="section-header"><b>EDUCATION</b></div>
+
+            <div class="project-text">
+                <b>가천대학교 재학 (2021.03 - 2026.02)</b>
+                <ul>
+                    <li>본전공 : 응용통계학과 <b>|</b> 복수전공 : 컴퓨터공학과</li>
+                </ul>
+            </div>
+        </section>
+
+    </article>
+</body>
+
+
+</html>
