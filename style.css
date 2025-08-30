@@ -63,17 +63,17 @@ section {
     font-size: 0.9rem;
 }
 
-.section-period {
+.project-period {
     color: #acacac;
     font-size: 0.8rem;
     margin-top: 0.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .skill {
     color: #2d2736d1;
-    font-size: 0.8rem;
-    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    margin-top: 0rem;
     margin-bottom: 0.5rem;
 }
 
